@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
 
     val fileReader = BufferedReader(FileReader(file))
 
-    val regex = Regex("\\s")
+    val regex = Regex("[\\s.,!?]")
 
     val counts = fileReader.lines().parallel().flatMap { line ->
         line.toLowerCase().split(regex).stream().filter { word -> word.length >= 4 }
